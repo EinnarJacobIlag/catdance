@@ -1,3 +1,11 @@
+document.addEventListener("DOMContentLoaded", function() {
+    var audio = document.getElementById("background-music");
+    var timestamps = [0, 182, 360, 559, 726, 1007, 1136, 1251]; // Array of timestamps in seconds
+    var randomIndex = Math.floor(Math.random() * timestamps.length); // Generate a random index
+    var randomTime = timestamps[randomIndex]; // Select a random timestamp from the array
+    audio.currentTime = randomTime; // Set the currentTime to the random timestamp
+});
+
 let lastInteractionTime = Date.now();
 let timerInterval;
 
@@ -67,15 +75,6 @@ document.addEventListener("DOMContentLoaded", function() {
   setupImageChange("four", 3);
   setupImageChange("five", 4);
 });
-
-document.addEventListener("DOMContentLoaded", function() {
-    var audio = document.getElementById("background-music");
-    var timestamps = [0, 182, 360, 559, 726, 1007, 1136, 1251]; // Array of timestamps in seconds
-    var randomIndex = Math.floor(Math.random() * timestamps.length); // Generate a random index
-    var randomTime = timestamps[randomIndex]; // Select a random timestamp from the array
-    audio.currentTime = randomTime; // Set the currentTime to the random timestamp
-});
-
 
 document.addEventListener("visibilitychange", function () {
   if (document.visibilityState === "hidden") {
