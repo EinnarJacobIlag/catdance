@@ -27,31 +27,13 @@ function stopTimer() {
 startTimer(); // Initial call to start the timer
 
 document.addEventListener("DOMContentLoaded", function() {
-    sounplayed = False;
+    soundplayed = False;
     var audio = document.getElementById("background-music");
     var timestamps = [0, 182, 360, 559, 726, 1007, 1136, 1251]; // Array of timestamps in seconds
     var randomIndex = Math.floor(Math.random() * timestamps.length); // Generate a random index
     var randomTime = timestamps[randomIndex]; // Select a random timestamp from the array
     audio.currentTime = randomTime; // Set the currentTime to the random timestamp
     audio.play();
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  const playButton = document.getElementById("playButton");
-  const backgroundMusic = document.getElementById("background-music");
-
-  playButton.addEventListener("click", function() {
-    // Check if the audio is already playing
-    if (backgroundMusic.paused) {
-      // If paused, play the audio
-      backgroundMusic.play();
-      playButton.innerText = "Pause Background Music"; // Change button text
-    } else {
-      // If playing, pause the audio
-      backgroundMusic.pause();
-      playButton.innerText = "Play Background Music"; // Change button text
-    }
-  });
 });
 
 document.addEventListener("DOMContentLoaded", function() {
