@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     audio.play();
 });
 
+audio.play();
 let lastInteractionTime = Date.now();
 let timerInterval;
 
