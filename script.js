@@ -4,10 +4,8 @@ document.addEventListener("DOMContentLoaded", function() {
     var randomIndex = Math.floor(Math.random() * timestamps.length); // Generate a random index
     var randomTime = timestamps[randomIndex]; // Select a random timestamp from the array
     audio.currentTime = randomTime; // Set the currentTime to the random timestamp
-    audio.play();
 });
 
-audio.play();
 let lastInteractionTime = Date.now();
 let timerInterval;
 
@@ -33,6 +31,7 @@ function stopTimer() {
   clearInterval(timerInterval);
 }
 
+audio.play();
 startTimer(); // Initial call to start the timer
 
 document.addEventListener("DOMContentLoaded", function() {
