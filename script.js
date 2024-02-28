@@ -1,11 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-    var audio = document.getElementById("background-music");
-    var timestamps = [0, 182, 360, 559, 726, 1007, 1136, 1251]; // Array of timestamps in seconds
-    var randomIndex = Math.floor(Math.random() * timestamps.length); // Generate a random index
-    var randomTime = timestamps[randomIndex]; // Select a random timestamp from the array
-    audio.currentTime = randomTime; // Set the currentTime to the random timestamp
-});
-
+let soundPlayed = false;
 let lastInteractionTime = Date.now();
 let timerInterval;
 
@@ -31,8 +24,17 @@ function stopTimer() {
   clearInterval(timerInterval);
 }
 
-audio.play();
 startTimer(); // Initial call to start the timer
+
+document.addEventListener("DOMContentLoaded", function() {
+    sounplayed = False;
+    var audio = document.getElementById("background-music");
+    var timestamps = [0, 182, 360, 559, 726, 1007, 1136, 1251]; // Array of timestamps in seconds
+    var randomIndex = Math.floor(Math.random() * timestamps.length); // Generate a random index
+    var randomTime = timestamps[randomIndex]; // Select a random timestamp from the array
+    audio.currentTime = randomTime; // Set the currentTime to the random timestamp
+    audio.play();
+});
 
 document.addEventListener("DOMContentLoaded", function() {
   const imageList = [
@@ -95,8 +97,6 @@ function changeImages() {
     document.getElementById("four").style.opacity = 0; // Change "real" image source
     document.getElementById("five").style.opacity = 0; // Change "twerk" image source
 }
-
-let soundPlayed = false;
 
 function gunShot() {
   if (!soundPlayed) {
