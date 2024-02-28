@@ -37,6 +37,24 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
+  const playButton = document.getElementById("playButton");
+  const backgroundMusic = document.getElementById("background-music");
+
+  playButton.addEventListener("click", function() {
+    // Check if the audio is already playing
+    if (backgroundMusic.paused) {
+      // If paused, play the audio
+      backgroundMusic.play();
+      playButton.innerText = "Pause Background Music"; // Change button text
+    } else {
+      // If playing, pause the audio
+      backgroundMusic.pause();
+      playButton.innerText = "Play Background Music"; // Change button text
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
   const imageList = [
     "image/pete-cat.gif",
     "image/groovy-cat.gif",
